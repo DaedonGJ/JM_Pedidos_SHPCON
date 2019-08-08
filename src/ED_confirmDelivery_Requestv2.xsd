@@ -1,0 +1,117 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Pedidos">
+    <xs:complexType>
+      <xs:sequence>
+	  <xs:element type="xs:string" name="Tipo"/>	  
+        <xs:element name="cabecera_documento">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="fecha_documento"/>
+              <xs:element type="xs:string" name="hora_documento"/>
+              <xs:element name="consignatario">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cliente">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="codigo"/>
+                          <xs:element type="xs:string" name="razon_social"/>
+                          <xs:element type="xs:string" name="nif"/>
+                          <xs:element type="xs:string" name="direccion"/>
+                          <xs:element type="xs:string" name="codigo_postal"/>
+                          <xs:element type="xs:string" name="poblacion"/>
+                          <xs:element type="xs:string" name="provincia"/>
+                          <xs:element type="xs:string" name="pais"/>
+                          <xs:element type="xs:string" name="telefono"/>
+                          <xs:element type="xs:string" name="fax"/>
+                          <xs:element type="xs:string" name="persona_contacto"/>
+                          <xs:element type="xs:string" name="mail"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pedido" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cabecera">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string"  name="numero_pedido"/>
+                    <xs:element type="xs:string"  name="fecha_pedido"/>
+                    <xs:element type="xs:string"  name="fecha_salida_almacen"/>
+                    <xs:element type="xs:string"  name="fecha_entrega"/>
+                    <xs:element type="xs:string"  name="estado"/>
+                    <xs:element type="xs:string"  name="descripcion_estado"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="destino">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cliente">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="codigo"/>
+                          <xs:element type="xs:string" name="razon_social"/>
+                          <xs:element type="xs:string" name="nif"/>
+                          <xs:element type="xs:string" name="direccion"/>
+                          <xs:element type="xs:string" name="codigo_postal"/>
+                          <xs:element type="xs:string" name="poblacion"/>
+                          <xs:element type="xs:string" name="provincia"/>
+                          <xs:element type="xs:string" name="pais"/>
+                          <xs:element type="xs:string" name="telefono"/>
+                          <xs:element type="xs:string" name="fax"/>
+                          <xs:element type="xs:string" name="persona_contacto"/>
+                          <xs:element type="xs:string" name="mail"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="lineas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="linea" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="codigo_articulo"/>
+                          <xs:element type="xs:string" name="num_linea"/>
+                          <xs:element type="xs:string" name="num_entrega"/>
+                          <xs:element type="xs:string" name="cod_interno_articulo"/>
+                          <xs:element type="xs:string" name="descripcion"/>
+                          <xs:element type="xs:string" name="ean"/>
+                          <xs:element type="xs:string" name="cantidad"/>
+                          <xs:element type="xs:string" name="PosicionPadre"/>						  
+                          <xs:element name="lotes">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="lote" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+								  <xs:sequence>
+                                      <xs:element type="xs:string" name="numero"/>
+                                       <xs:element type="xs:string" name="unidades"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
